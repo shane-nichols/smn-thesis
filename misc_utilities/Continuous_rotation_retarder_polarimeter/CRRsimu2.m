@@ -1,0 +1,66 @@
+function CRRsimu 
+f0=1;
+f1=1.25;
+p0=0.124;
+p1=0.42;
+d0=1.5645;
+d1=1.6543;
+t=24.6542;
+arg0 = 2*(2*pi*f0.*t + p0);
+arg1 = 2*(2*pi*f1.*t + p1);
+Cp0 = cos(arg0);
+C2p0 = cos(2*arg0);
+Sp0 = sin(arg0);
+S2p0 = sin(2*arg0);
+Cp1 = cos(arg1);
+C2p1 = cos(2*arg1);
+Sp1 = sin(arg1);
+S2p1 = sin(2*arg1);
+Cd0 = cos(d0);
+Sd0 = sin(d0);
+Cd1 = cos(d1);
+Sd1 = sin(d1);
+a = sin(d0);
+b = sin(d1);
+c = (1+cos(d0))/2;
+d = -(1+cos(d1))/2;
+e = (1-cos(d0))/2;
+f = (cos(d1)-1)/2;
+Bg(1) = 1;
+Bg(2) = Cp0.^2 + Cd0.*Sp0.^2;
+Bg(3) = Cp0.*Sp0.*(1 - Cd0);
+Bg(4) = Sd0.*Sp0;
+Ba(1) = 1;
+Ba(2) = -(Cp1.^2 + Cd1.*Sp1.^2);
+Ba(3) = -Cp1.*Sp1.*(1 - Cd1);
+Ba(4) = Sd1.*Sp1;
+Ba;
+Bg;
+M=rand(4);
+A = reshape(M',16,1);
+I=kron(Ba,Bg)*A
+Inv = inv(transpose(Bg)*Ba)
+
+Dg(1) =((e-2*c*C2p0).*(f-2*d*C2p1))/(2*e*f)*I;
+Dg(2) = C2p0.*(f-2*d*C2p1)/(e*f)*I;
+Dg(3) = C2p0.*(f-2*d*C2p1)/(e*f)*I;
+Dg(4) = (f-2*d*C2p1).*Sp0/(a*f)*I;
+Dg;
+
+M(1,1) = ((e-2*c*C2p0).*(f-2*d*C2p1))/(2*e*f)*I;
+M(1,2) = C2p0.*(f-2*d*C2p1)/(e*f)*I;
+M(1,3) = C2p0.*(f-2*d*C2p1)/(e*f)*I;
+M(1,4) = (f-2*d*C2p1).*Sp0/(a*f)*I;
+M(2,1) = (e-2*c*C2p0).*C2p1/(e*f)*I;
+M(2,2) = 2*C2p0.*C2p1/(e*f)*I;
+M(2,3) = 2*C2p1.*S2p0/(e*f)*I;
+M(2,4) = 2*C2p1.*Sp0/(a*f)*I;
+M(3,1) = (e-2*c*C2p0).*S2p1/(e*f)*I;
+M(3,2) = 2*C2p0.*S2p1/(e*f)*I;
+M(3,3) = 8*Cp0.*Cp1.*Sp0.*Sp1/(e*f)*I;
+M(3,4) = 4*Cp1.*Sp0.*Sp1/(a*f)*I;
+M(4,1) = (e-2*c*C2p0).*Sp1/(b*e)*I;
+M(4,2) = 2*C2p0.*Sp1/(b*e)*I;
+M(4,3) = 4*Cp0.*Sp0.*Sp1/(b*e)*I;
+M(4,4) = 2/(a*b)*Sp0.*Sp1*I;
+M;

@@ -1,0 +1,569 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28392,        561]
+NotebookOptionsPosition[     27671,        533]
+NotebookOutlinePosition[     28046,        550]
+CellTagsIndexPosition[     28003,        547]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"t", ",", "\[Theta]", ",", "c"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Bg", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", " ", ",", 
+      RowBox[{"c", "+", 
+       RowBox[{"e", "*", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "*", "t"}], "]"}]}]}], ",", " ", 
+      RowBox[{"c", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", "*", "t"}], "]"}]}], ",", " ", 
+      RowBox[{"a", "*", 
+       RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}], "/", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KG", "=", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"KroneckerProduct", "[", 
+       RowBox[{"Bg", ",", "Bg"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"-", "Pi"}], ",", "Pi"}], "}"}]}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "Pi"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<K_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", "KG", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<Inverse of K_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{"Inverse", "[", "KG", "]"}], "]"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7050993380357313`*^9, 3.705099350204967*^9}, {
+  3.705099382386112*^9, 3.705099559146974*^9}, {3.7050997298326197`*^9, 
+  3.7050997749126263`*^9}, {3.705100775344681*^9, 3.705100850448852*^9}, {
+  3.705100884177843*^9, 3.705100949099526*^9}, {3.705103605128448*^9, 
+  3.70510362977194*^9}, {3.705103665827063*^9, 3.705103760857329*^9}, {
+  3.705103807022797*^9, 3.7051038151983013`*^9}, {3.7051039952195187`*^9, 
+  3.705104002047406*^9}, {3.705105146872889*^9, 3.705105150790894*^9}}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"K_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{FractionBox[\\\"1\\\", \\\"4\\\"], FractionBox[\
+\\\"c\\\", \\\"4\\\"], \\\"0\\\", \\\"0\\\"}, {FractionBox[\\\"c\\\", \\\"4\\\
+\"], RowBox[{FractionBox[\\\"1\\\", \\\"8\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", SuperscriptBox[\\\"c\\\", \\\"2\\\"]}], \
+\\\"+\\\", SuperscriptBox[\\\"e\\\", \\\"2\\\"]}], \\\")\\\"}]}], \\\"0\\\", \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\", FractionBox[SuperscriptBox[\\\"c\\\", \
+\\\"2\\\"], \\\"8\\\"], \\\"0\\\"}, {\\\"0\\\", \\\"0\\\", \\\"0\\\", \
+FractionBox[SuperscriptBox[\\\"a\\\", \\\"2\\\"], \\\"8\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["K_G =``", 
+   MatrixForm[{{
+      Rational[1, 4], Rational[1, 4] $CellContext`c, 0, 0}, {
+     Rational[1, 4] $CellContext`c, 
+      Rational[1, 8] (2 $CellContext`c^2 + $CellContext`e^2), 0, 0}, {
+     0, 0, Rational[1, 8] $CellContext`c^2, 0}, {
+     0, 0, 0, Rational[1, 8] $CellContext`a^2}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099757508006*^9, 3.7050997674743433`*^9}, {
+   3.705100785018824*^9, 3.705100906491426*^9}, 3.705100950851066*^9, 
+   3.7051036221436567`*^9, 3.705103762544344*^9, 3.7051038162959623`*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"Inverse of K_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\
+\"\[NoBreak]\\\", GridBox[{{RowBox[{\\\"4\\\", \\\"+\\\", \
+FractionBox[RowBox[{\\\"8\\\", \\\" \\\", SuperscriptBox[\\\"c\\\", \
+\\\"2\\\"]}], SuperscriptBox[\\\"e\\\", \\\"2\\\"]]}], RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"8\\\", \\\" \\\", \\\"c\\\"}], SuperscriptBox[\\\"e\\\
+\", \\\"2\\\"]]}], \\\"0\\\", \\\"0\\\"}, {RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"8\\\", \\\" \\\", \\\"c\\\"}], SuperscriptBox[\\\"e\\\
+\", \\\"2\\\"]]}], FractionBox[\\\"8\\\", SuperscriptBox[\\\"e\\\", \
+\\\"2\\\"]], \\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\", \
+FractionBox[\\\"8\\\", SuperscriptBox[\\\"c\\\", \\\"2\\\"]], \\\"0\\\"}, {\\\
+\"0\\\", \\\"0\\\", \\\"0\\\", FractionBox[\\\"8\\\", \
+SuperscriptBox[\\\"a\\\", \\\"2\\\"]]}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["Inverse of K_G =``", 
+   MatrixForm[{{
+     4 + 8 $CellContext`c^2 $CellContext`e^(-2), (-8) $CellContext`c \
+$CellContext`e^(-2), 0, 0}, {(-8) $CellContext`c $CellContext`e^(-2), 
+      8 $CellContext`e^(-2), 0, 0}, {0, 0, 8 $CellContext`c^(-2), 0}, {
+     0, 0, 0, 8 $CellContext`a^(-2)}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099757508006*^9, 3.7050997674743433`*^9}, {
+   3.705100785018824*^9, 3.705100906491426*^9}, 3.705100950851066*^9, 
+   3.7051036221436567`*^9, 3.705103762544344*^9, 3.705103816302795*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"P", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", " ", "\[Theta]"}], "]"}], ",", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "\[Theta]"}], "]"}], ",", "0"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", "\[Theta]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}], "^", "2"}], ",", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}], " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}]}], ",", "0"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "\[Theta]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}], " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}], "^", "2"}], ",", "0"}], "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}], "/", 
+    "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<Rotatable Polarizer =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", "P", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"c", "+", 
+        RowBox[{"e", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "t"}], "]"}]}]}], ",", 
+       RowBox[{"e", " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "t"}], "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", "a"}], " ", 
+        RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"e", " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "t"}], "]"}]}], ",", 
+       RowBox[{"c", "-", 
+        RowBox[{"e", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "t"}], "]"}]}]}], ",", 
+       RowBox[{"a", " ", 
+        RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", 
+       RowBox[{"a", " ", 
+        RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", "a"}], " ", 
+        RowBox[{"Cos", "[", "t", "]"}]}], ",", "g"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<Rotatable Retarder =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", "R", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Bg", " ", "=", 
+   RowBox[{
+    RowBox[{"R", ".", "P", ".", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}]}], "//", 
+    "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<B_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", "Bg", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KG", "=", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"KroneckerProduct", "[", 
+       RowBox[{"Bg", ",", "Bg"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"-", "Pi"}], ",", "Pi"}], "}"}]}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "*", "Pi"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<K_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"FullSimplify", "[", "KG", "]"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KGinverse", "=", 
+   RowBox[{"Inverse", "[", "KG", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<Inverse of K_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"FullSimplify", "[", "KGinverse", "]"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"StringForm", "[", 
+  RowBox[{"\"\<D_G =``\>\"", ",", 
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{"KGinverse", ".", "Bg"}], "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.705099792380323*^9, 3.705099831789982*^9}, {
+  3.705099911155273*^9, 3.705099983603346*^9}, {3.705100027705001*^9, 
+  3.7051000797003393`*^9}, {3.705100129234591*^9, 3.705100135827856*^9}, {
+  3.705100339417494*^9, 3.7051003572147217`*^9}, {3.7051004085092707`*^9, 
+  3.705100413683866*^9}, {3.7051005816183*^9, 3.705100582558012*^9}, {
+  3.705100955001985*^9, 3.705101036723329*^9}, {3.70510115687612*^9, 
+  3.7051011643821173`*^9}, {3.705101474657765*^9, 3.705101475934745*^9}, {
+  3.705101507838667*^9, 3.705101508220289*^9}, {3.7051040144017887`*^9, 
+  3.705104065746767*^9}, {3.705104155671303*^9, 3.705104185986761*^9}, {
+  3.705104220777403*^9, 3.705104225671927*^9}, {3.705104277821067*^9, 
+  3.705104326432001*^9}, {3.705104364512149*^9, 3.705104365252569*^9}, {
+  3.705104396260974*^9, 3.705104475940488*^9}, {3.705105124170433*^9, 
+  3.705105256153632*^9}}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"Rotatable Polarizer \
+=\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{FractionBox[\\\"1\\\", \\\"2\\\"], RowBox[{FractionBox[\\\"1\\\", \
+\\\"2\\\"], \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \
+\\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], RowBox[{FractionBox[\\\"1\\\", \
+\\\"2\\\"], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\", \
+\\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \\\"0\\\"}, \
+{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"Cos\\\", \
+\\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", SuperscriptBox[RowBox[{\
+\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \
+\\\"]\\\"}], \\\"2\\\"]}], RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\
+\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[Theta]\\\"}], \\\"]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \\\"0\\\"}, \
+{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"Sin\\\", \
+\\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"Cos\\\", \\\
+\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}], \\\" \
+\\\", RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\
+\[Theta]\\\"}], \\\"]\\\"}]}], RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \
+\\\" \\\", SuperscriptBox[RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\", \
+\\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}], \\\"2\\\"]}], \\\"0\\\"}, \
+{\\\"0\\\", \\\"0\\\", \\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["Rotatable Polarizer =``", 
+   MatrixForm[{{
+      Rational[1, 2], Rational[1, 2] Cos[2 $CellContext`\[Theta]], 
+      Rational[1, 2] Sin[2 $CellContext`\[Theta]], 0}, {
+     Rational[1, 2] Cos[2 $CellContext`\[Theta]], Rational[1, 2] 
+      Cos[2 $CellContext`\[Theta]]^2, Rational[1, 2] 
+      Cos[2 $CellContext`\[Theta]] Sin[2 $CellContext`\[Theta]], 0}, {
+     Rational[1, 2] Sin[2 $CellContext`\[Theta]], Rational[1, 2] 
+      Cos[2 $CellContext`\[Theta]] Sin[2 $CellContext`\[Theta]], 
+      Rational[1, 2] Sin[2 $CellContext`\[Theta]]^2, 0}, {0, 0, 0, 0}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105258351305*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"Rotatable Retarder \
+=\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"1\\\", \
+\\\"0\\\", \\\"0\\\", \\\"0\\\"}, {\\\"0\\\", RowBox[{\\\"c\\\", \\\"+\\\", \
+RowBox[{\\\"e\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"t\\\"}], \\\"]\\\"}]}]}], RowBox[{\\\"e\\\", \\\" \\\", \
+RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"t\\\"}], \\\
+\"]\\\"}]}], RowBox[{RowBox[{\\\"-\\\", \\\"a\\\"}], \\\" \\\", \
+RowBox[{\\\"Sin\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}]}, {\\\"0\\\", \
+RowBox[{\\\"e\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"t\\\"}], \\\"]\\\"}]}], RowBox[{\\\"c\\\", \\\"-\\\", \
+RowBox[{\\\"e\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"t\\\"}], \\\"]\\\"}]}]}], RowBox[{\\\"a\\\", \\\" \\\", \
+RowBox[{\\\"Cos\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}]}, {\\\"0\\\", \
+RowBox[{\\\"a\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}], RowBox[{RowBox[{\\\"-\\\", \\\"a\\\"}], \\\" \\\", \
+RowBox[{\\\"Cos\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"g\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["Rotatable Retarder =``", 
+   MatrixForm[{{1, 0, 0, 0}, {
+     0, $CellContext`c + $CellContext`e Cos[2 $CellContext`t], $CellContext`e 
+      Sin[2 $CellContext`t], -$CellContext`a Sin[$CellContext`t]}, {
+     0, $CellContext`e Sin[2 $CellContext`t], $CellContext`c - $CellContext`e 
+      Cos[2 $CellContext`t], $CellContext`a Cos[$CellContext`t]}, {
+     0, $CellContext`a Sin[$CellContext`t], -$CellContext`a 
+      Cos[$CellContext`t], $CellContext`g}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105258356316*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"B_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", TagBox[GridBox[{{FractionBox[\\\"1\\\", \\\"2\\\"]}, \
+{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"e\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"t\\\", \
+\\\"-\\\", \\\"\[Theta]\\\"}], \\\")\\\"}]}], \\\"]\\\"}]}], \\\"+\\\", \
+RowBox[{\\\"c\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}, \
+{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"e\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"t\\\", \
+\\\"-\\\", \\\"\[Theta]\\\"}], \\\")\\\"}]}], \\\"]\\\"}]}], \\\"+\\\", \
+RowBox[{\\\"c\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]}, \
+{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", \\\"a\\\", \\\" \\\", \
+RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"t\\\", \\\"-\\\", RowBox[{\\\"2\\\
+\", \\\" \\\", \\\"\[Theta]\\\"}]}], \\\"]\\\"}]}]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
+\"\>",
+  StringForm["B_G =``", 
+   MatrixForm[{
+     Rational[1, 2], 
+     Rational[1, 2] ($CellContext`e 
+       Cos[2 ($CellContext`t - $CellContext`\[Theta])] + $CellContext`c 
+       Cos[2 $CellContext`\[Theta]]), 
+     Rational[1, 2] ($CellContext`e 
+       Sin[2 ($CellContext`t - $CellContext`\[Theta])] + $CellContext`c 
+       Sin[2 $CellContext`\[Theta]]), Rational[1, 2] $CellContext`a 
+     Sin[$CellContext`t - 2 $CellContext`\[Theta]]}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105258399784*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"K_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{FractionBox[\\\"1\\\", \\\"4\\\"], \
+RowBox[{FractionBox[\\\"1\\\", \\\"4\\\"], \\\" \\\", \\\"c\\\", \\\" \\\", \
+RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[Theta]\\\"}], \\\"]\\\"}]}], RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \
+\\\" \\\", \\\"c\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \\\"\[Theta]\
+\\\", \\\"]\\\"}], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+\\\"\[Theta]\\\", \\\"]\\\"}]}], \\\"0\\\"}, {RowBox[{FractionBox[\\\"1\\\", \
+\\\"4\\\"], \\\" \\\", \\\"c\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"8\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\"e\
+\\\", \\\"2\\\"], \\\"+\\\", RowBox[{SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\
+\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\
+\[Theta]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"8\\\"], \\\" \\\", \
+SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\
+\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+\\\"0\\\"}, {RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", \\\"c\\\", \
+\\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \\\"\[Theta]\\\", \\\"]\\\"}], \
+\\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \\\"\[Theta]\\\", \\\"]\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"8\\\"], \\\" \\\", \
+SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\
+\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+RowBox[{FractionBox[\\\"1\\\", \\\"8\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\"e\
+\\\", \\\"2\\\"], \\\"-\\\", RowBox[{SuperscriptBox[\\\"c\\\", \\\"2\\\"], \\\
+\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\
+\[Theta]\\\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}], \\\"0\\\"}, {\\\"0\\\", \\\"0\
+\\\", \\\"0\\\", FractionBox[SuperscriptBox[\\\"a\\\", \\\"2\\\"], \
+\\\"8\\\"]}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["K_G =``", 
+   MatrixForm[{{
+      Rational[1, 4], Rational[1, 4] $CellContext`c 
+      Cos[2 $CellContext`\[Theta]], Rational[1, 2] $CellContext`c 
+      Cos[$CellContext`\[Theta]] Sin[$CellContext`\[Theta]], 0}, {
+     Rational[1, 4] $CellContext`c Cos[2 $CellContext`\[Theta]], 
+      Rational[1, 8] ($CellContext`c^2 + $CellContext`e^2 + $CellContext`c^2 
+        Cos[4 $CellContext`\[Theta]]), Rational[1, 8] $CellContext`c^2 
+      Sin[4 $CellContext`\[Theta]], 0}, {
+     Rational[1, 2] $CellContext`c Cos[$CellContext`\[Theta]] 
+      Sin[$CellContext`\[Theta]], Rational[1, 8] $CellContext`c^2 
+      Sin[4 $CellContext`\[Theta]], 
+      Rational[1, 8] ($CellContext`c^2 + $CellContext`e^2 - $CellContext`c^2 
+       Cos[4 $CellContext`\[Theta]]), 0}, {
+     0, 0, 0, Rational[1, 8] $CellContext`a^2}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105262656987*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"Inverse of K_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\
+\"\[NoBreak]\\\", GridBox[{{RowBox[{\\\"4\\\", \\\"+\\\", \
+FractionBox[RowBox[{\\\"8\\\", \\\" \\\", SuperscriptBox[\\\"c\\\", \
+\\\"2\\\"]}], SuperscriptBox[\\\"e\\\", \\\"2\\\"]]}], RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"8\\\", \\\" \\\", \\\"c\\\", \\\" \\\", \
+RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[Theta]\\\"}], \\\"]\\\"}]}], SuperscriptBox[\\\"e\\\", \\\"2\\\"]]}], \
+RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"8\\\", \\\" \\\", \\\"c\\\", \\\" \
+\\\", RowBox[{\\\"Sin\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", \\\"\
+\[Theta]\\\"}], \\\"]\\\"}]}], SuperscriptBox[\\\"e\\\", \\\"2\\\"]]}], \\\"0\
+\\\"}, {RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"8\\\", \\\" \\\", \
+\\\"c\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \
+\\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], SuperscriptBox[\\\"e\\\", \
+\\\"2\\\"]]}], FractionBox[\\\"8\\\", SuperscriptBox[\\\"e\\\", \\\"2\\\"]], \
+\\\"0\\\", \\\"0\\\"}, {RowBox[{\\\"-\\\", FractionBox[RowBox[{\\\"8\\\", \
+\\\" \\\", \\\"c\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Theta]\\\"}], \\\"]\\\"}]}], \
+SuperscriptBox[\\\"e\\\", \\\"2\\\"]]}], \\\"0\\\", FractionBox[\\\"8\\\", \
+SuperscriptBox[\\\"e\\\", \\\"2\\\"]], \\\"0\\\"}, {\\\"0\\\", \\\"0\\\", \
+\\\"0\\\", FractionBox[\\\"8\\\", SuperscriptBox[\\\"a\\\", \\\"2\\\"]]}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\"\>",
+  StringForm["Inverse of K_G =``", 
+   MatrixForm[{{
+     4 + 8 $CellContext`c^2 $CellContext`e^(-2), (-8) $CellContext`c \
+$CellContext`e^(-2) 
+      Cos[2 $CellContext`\[Theta]], (-8) $CellContext`c $CellContext`e^(-2) 
+      Sin[2 $CellContext`\[Theta]], 
+      0}, {(-8) $CellContext`c $CellContext`e^(-2) 
+      Cos[2 $CellContext`\[Theta]], 8 $CellContext`e^(-2), 0, 
+      0}, {(-8) $CellContext`c $CellContext`e^(-2) 
+      Sin[2 $CellContext`\[Theta]], 0, 8 $CellContext`e^(-2), 0}, {
+     0, 0, 0, 8 $CellContext`a^(-2)}}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105262759967*^9}],
+
+Cell[BoxData[
+ InterpretationBox["\<\"D_G =\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", TagBox[GridBox[{{RowBox[{\\\"2\\\", \\\"-\\\", \
+FractionBox[RowBox[{\\\"4\\\", \\\" \\\", \\\"c\\\", \\\" \\\", \
+RowBox[{\\\"Cos\\\", \\\"[\\\", RowBox[{\\\"2\\\", \\\" \\\", RowBox[{\\\"(\\\
+\", RowBox[{\\\"t\\\", \\\"-\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[Theta]\\\"}]}], \\\")\\\"}]}], \\\"]\\\"}]}], \\\"e\\\"]}]}, \
+{FractionBox[RowBox[{\\\"4\\\", \\\" \\\", RowBox[{\\\"Cos\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"t\\\", \
+\\\"-\\\", \\\"\[Theta]\\\"}], \\\")\\\"}]}], \\\"]\\\"}]}], \\\"e\\\"]}, \
+{FractionBox[RowBox[{\\\"4\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"t\\\", \
+\\\"-\\\", \\\"\[Theta]\\\"}], \\\")\\\"}]}], \\\"]\\\"}]}], \\\"e\\\"]}, \
+{FractionBox[RowBox[{\\\"4\\\", \\\" \\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \
+RowBox[{\\\"t\\\", \\\"-\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[Theta]\\\"}]}], \\\"]\\\"}]}], \\\"a\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
+\"\>",
+  StringForm["D_G =``", 
+   MatrixForm[{
+    2 - 4 $CellContext`c $CellContext`e^(-1) 
+     Cos[2 ($CellContext`t - 2 $CellContext`\[Theta])], 4 $CellContext`e^(-1) 
+     Cos[2 ($CellContext`t - $CellContext`\[Theta])], 4 $CellContext`e^(-1) 
+     Sin[2 ($CellContext`t - $CellContext`\[Theta])], 4 $CellContext`a^(-1) 
+     Sin[$CellContext`t - 2 $CellContext`\[Theta]]}]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.705099781332459*^9, 3.7050998325574017`*^9}, {
+   3.705099971997374*^9, 3.7050999845234327`*^9}, 3.705100028684176*^9, 
+   3.705100080362557*^9, {3.7051001322419024`*^9, 3.705100136388959*^9}, 
+   3.70510058373253*^9, {3.705100957876989*^9, 3.705101037442985*^9}, 
+   3.705101164868019*^9, {3.705101480152094*^9, 3.705101509094077*^9}, 
+   3.705104037971179*^9, 3.705104076571851*^9, 3.705104333860076*^9, 
+   3.705104365862919*^9, {3.7051044672161093`*^9, 3.705104483125757*^9}, 
+   3.705105193882965*^9, 3.705105263107688*^9}]
+}, Open  ]]
+},
+WindowSize->{944, 752},
+WindowMargins->{{122, Automatic}, {Automatic, 0}},
+Magnification->1.25,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1831, 45, 170, "Input"],
+Cell[2414, 69, 1450, 23, 148, "Output"],
+Cell[3867, 94, 1583, 25, 150, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5487, 124, 5275, 138, 456, "Input"],
+Cell[10765, 264, 3130, 46, 128, "Output"],
+Cell[13898, 312, 2447, 36, 104, "Output"],
+Cell[16348, 350, 2464, 39, 138, "Output"],
+Cell[18815, 391, 3828, 58, 142, "Output"],
+Cell[22646, 451, 2797, 43, 154, "Output"],
+Cell[25446, 496, 2209, 34, 144, "Output"]
+}, Open  ]]
+}
+]
+*)
+
