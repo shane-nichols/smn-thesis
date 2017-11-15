@@ -66,7 +66,7 @@ P1(1,1,:,:) = exp(-k0 .* K(1,:,:));
 P1(2,2,:,:) = exp(-k0 .* K(2,:,:));
 P2(1,1,:,:) = exp( k0 .* K(3,:,:));
 P2(2,2,:,:) = exp( k0 .* K(4,:,:));
-Int01 = multiprod(invert4x4(Psi0), Psi1);
+Int01 = multiprod(multinv(Psi0), Psi1);
 Int12 = multiprod(Psi1inv, Psi2);
 Int10 = multiprod(Psi1inv, Psi0);
 T01 = invert2x2(Int01([1,2], [1,2], :, :));
@@ -86,12 +86,12 @@ if bReflect
     R01 = bigKron(R01);
     P2 = multiprod(multiprod(P2,R12),P1); % redefine P2 for in-place
     MM = R01 + multiprod(multiprod(multiprod(T10, P2), ...
-        invert4x4(eye(4) - multiprod(R10, P2))), T01);
+        multinv(eye(4) - multiprod(R10, P2))), T01);
     MM = real(multiprod(multiprod(A, MM), Ainv));
 else
     T01 = bigKron(T01);
         MM = multiprod(multiprod(multiprod(T12,P1),...
-        invert4x4(eye(4) - multiprod(multiprod(multiprod(R10,P2),R12),P1))), T01);
+        multinv(eye(4) - multiprod(multiprod(multiprod(R10,P2),R12),P1))), T01);
         MM = real(multiprod(multiprod(A, MM), Ainv));
 end
 
