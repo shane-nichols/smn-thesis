@@ -13,11 +13,10 @@ function M = mmPartialWave(layerArray, wavelengths, aoi, bReflect, bNorm)
 
 aoi = aoi.*pi./180;
 Nlayers = size(layerArray,2);
-thick = zeros(Nlayers, 1);
-for k=1:Nlayers
-    thick(k) = layerArray{k}{4};
+g = 1;
+while layerArray{g}{4} == 0
+    g = g + 1;
 end
-g = find(thick == true);
 
 if strcmp(layerArray{1}{1}, 'air')
     t1 = cos(aoi);
@@ -64,7 +63,7 @@ end
 M = partialWave(Psi0, Psi2, layerArray{g}, wavelengths, kx, bReflect);
 
 if bNorm
-    M = M ./ M(1,1,lam);
+    M = M ./ M(1,1,:);
 end
 
 end
