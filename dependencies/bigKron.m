@@ -4,7 +4,7 @@ function out = bigKron(a)
 % out is an array of size 4,4,N,N,O...
 sz = size(a);
 a = reshape(a, 2, 2, []);
-out = zeros(4,4,size(a,3),size(a,4));
+out = zeros(4, 4, size(a, 3));
 out(1,1,:) = a(1,1,:) .* conj(a(1,1,:));
 out(1,2,:) = a(1,1,:) .* conj(a(1,2,:));
 out(1,3,:) = conj( out(1,2,:) );
