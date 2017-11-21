@@ -39,6 +39,9 @@ MM = mm.mmPartialWave(layerArray, wavelengths, 20, True, False)
 # Spyder with the IPython graphics backend set to Automatic.
 figW = 11
 figH = 6.5
+plt.rcParams.update({'font.size': 8,
+                     'ytick.direction': 'in',
+                     'xtick.direction': 'in'})
 fig, ax_lst = plt.subplots(4, 4, sharex='col', figsize=(figW, figH))
 for x in range(4):
     for y in range(4):
