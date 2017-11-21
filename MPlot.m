@@ -178,7 +178,7 @@ classdef (InferiorClasses = {?matlab.graphics.axis.Axes}) MPlot < handle
                 end
             end
             %plot data and set Line properties.
-            if obj.ev == true; wavelengths = 1239.8./wavelengths; end
+            if obj.ev; wavelengths = 1239.8./wavelengths; end
             if isempty(mmError)
                 for j = 1:4
                     for k = 1:4
